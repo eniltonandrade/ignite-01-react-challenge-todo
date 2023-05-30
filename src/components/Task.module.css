@@ -1,0 +1,73 @@
+.task {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    background: var(--gray-500);
+    border-radius: 8px;
+    border: 1px solid var(--gray-400);
+}
+
+.task+.task {
+    margin-top: 0.75rem;
+}
+
+.task button {
+    background: transparent;
+    border: 0;
+    color: var(--gray-300);
+    padding: 0.3125rem;
+    cursor: pointer;
+    line-height: 0;
+    border-radius: 4px;
+}
+
+.task button:hover {
+    color: var(--danger);
+    background-color: var(--gray-400);
+}
+
+.task p {
+    width: 100%;
+    font-size: 0.875rem;
+}
+
+.task input[type=checkbox] {
+    margin-right: 0.75rem;
+    width: 1.1rem;
+    height: 1.1rem;
+    background: var(--gray-500);
+    border-radius: 50%;
+    border: 2px solid var(--blue);
+    appearance: none;
+    cursor: pointer;
+
+    position: relative;
+}
+
+.task input[type=checkbox]:hover {
+    border-color: var(--blue-dark);
+}
+
+.task input[type=checkbox]:checked {
+    background-color: var(--purple);
+    border-color: var(--purple);
+}
+
+.task input[type=checkbox]:checked:hover {
+    background-color: var(--purple-dark);
+    border-color: var(--purple-dark);
+}
+
+.task input[type=checkbox]:checked+p {
+    text-decoration: line-through;
+}
+
+.task input[type="checkbox"]:checked::before {
+    content: url("../assets/check.svg");
+    font-size: 0.5rem;
+    position: absolute;
+    color: red;
+    top: 0.2rem;
+    left: 0.1rem;
+}

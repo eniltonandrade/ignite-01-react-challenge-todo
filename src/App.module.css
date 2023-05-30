@@ -1,0 +1,113 @@
+.main {
+    max-width: 48rem;
+    margin: 0 auto;
+    padding: 0 1rem;
+
+    margin-top: calc(0px - 1.5rem)
+}
+
+.taskform {
+    display: flex;
+    gap: 0.5rem
+}
+
+.taskform input[type=text] {
+    padding: 1rem;
+    background: var(--gray-500);
+    border: 1px solid var(--gray-700);
+    border-radius: 8px;
+    width: 100%;
+    color: var(--gray-100);
+}
+
+.taskform button[type=submit] {
+    padding: 1rem;
+    background: var(--blue-dark);
+    border: 1px solid var(--gray-700);
+    border-radius: 8px;
+    color: var(--gray-100);
+    width: 90px;
+    font-size: 0.875rem;
+    font-weight: bold;
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 0.25rem;
+
+    transition: color 0.1s, background-color 0.1s;
+}
+
+.taskform button[type=submit]:hover {
+    background: var(--blue);
+}
+
+.taskList {
+    padding-top: 4rem;
+}
+
+.tasksHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+
+}
+
+.tasksHeader .counter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.tasksHeader .counter>strong {
+    color: var(--blue);
+    font-size: 0.875rem;
+}
+
+.tasksHeader .counter>span {
+    font-weight: bold;
+    font-size: 0.75rem;
+    background-color: var(--gray-400);
+    padding: 0.3125rem 0.5625rem;
+    border-radius: 9px;
+}
+
+.tasksHeader .status {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+
+}
+
+.tasksHeader .status>strong {
+    color: var(--purple);
+    font-size: 0.875rem;
+}
+
+.tasksHeader .status>span {
+    font-weight: bold;
+    font-size: 0.75rem;
+    background-color: var(--gray-400);
+    padding: 0.3125rem 0.5625rem;
+    border-radius: 9px;
+}
+
+.emptyList {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-top: 1px solid var(--gray-400);
+    border-radius: 8px;
+    padding-top: 4rem;
+    color: var(--gray-300)
+}
+
+.emptyList strong {
+    padding-top: 1rem;
+}
