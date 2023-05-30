@@ -25,11 +25,16 @@ export function App() {
     event.target.setCustomValidity('Este campo é obrigatório')
   }
 
-  function handleCompletionToogle(taskToUpdate: string) {
-
-    const TaskIndex = tasks.findIndex(task => task.id === taskToUpdate)
-    const NewTasks = tasks.slice()
-    NewTasks[TaskIndex].isCompleted = !NewTasks[TaskIndex].isCompleted
+  function handleCompletionToogle(taskIdToUpdate: string) {
+    const NewTasks = tasks.map(task => {
+      if (task.id === taskIdToUpdate) {
+        return {
+          ...task,
+          isCompleted: !task.isCompleted
+        }
+      }
+      return task
+    })
     setTasks(NewTasks)
   }
 
