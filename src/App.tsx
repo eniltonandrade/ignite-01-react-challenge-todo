@@ -13,8 +13,18 @@ export function App() {
   const [tasks, setTasks] = useState([] as TaskType[]);
   const [newTask, setNewTask] = useState('')
 
-  const tasksCompleted = tasks.filter(task => task.isCompleted === true).length
-  const allTasksCount = tasks.length
+  const taskCounts = tasks.reduce(
+    (summary, task) => {
+      summary.total++;
+      if (task.isCompleted) {
+        summary.completed++;
+      } else {
+        summary.notCompleted++;
+      }
+      return summary;
+    },
+    { total: 0, completed: 0, notCompleted: 0 }
+  );
 
   function handleNewTaskChange(event: ChangeEvent<HTMLInputElement>) {
     event.target.setCustomValidity('')
@@ -79,11 +89,11 @@ export function App() {
           <div className={styles.tasksHeader}>
             <div className={styles.counter}>
               <strong>Tarefas criadas</strong>
-              <span>{allTasksCount}</span>
+              <span>{taskCounts.total}</span>
             </div>
             <div className={styles.status}>
               <strong>Concluídas</strong>
-              <span>{tasksCompleted} de {allTasksCount}</span>
+              <span>{taskCounts.completed} de {taskCounts.total}</span>
             </div>
           </div>
           {
